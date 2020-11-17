@@ -2,16 +2,44 @@
   <demo-section>
     <demo-block title="基础用法">
     </demo-block>
-    <div style="width: 50px; height: 50px;">
-      <a-icon />
+    <div style="padding-left: 20px">
+      <icon
+        :rotate="23"
+        :tabindex="0"
+        class-name="test"
+        @click="onClick"
+        :component="PocketFilled"
+      />
     </div>
 
-    <demo-block title="自定义颜色">
-      <!-- <demo-button color="#03a9f4" style="margin-left: 15px;">按钮</demo-button> -->
+    <demo-block title="icon 列表">
+      <div style="padding-left: 20px">
+        <icon-list />
+      </div>
     </demo-block>
   </demo-section>
 </template>
 
 <script>
+import PocketFilled from './pocket-filled.svg';
+import IconList from './icon-list';
+
+export default {
+  components: {
+    'icon-list': IconList
+  },
+
+  data(){
+    return ({
+      PocketFilled
+    })
+  },
+
+  methods: {
+    onClick(){
+      console.log('----')
+    }
+  }
+};
 </script>
 

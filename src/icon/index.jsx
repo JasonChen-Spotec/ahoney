@@ -1,33 +1,52 @@
+import { insertCss } from 'insert-css';
+import styleStr from './utils';
+
+let cssInjectedFlag = false;
 
 const Icon = {
-  name: 'a-icon',
+  name: 'icon',
+  props: {
+    className: String,
+    rotate: Number,
+    component: Object,
+    click: Function
+  },
 
-  props: ['className', 'viewBox', 'spin', 'rotate', 'tabIndex', ],
+  mounted(){
+    if (!cssInjectedFlag) {
+      insertCss(styleStr, {
+        prepend: true
+      });
+      cssInjectedFlag = true;
+    }
+  },
+
+  methods: {
+    handleClick(event) {
+      this.$emit('click', event);
+    },
+  },
 
   render(){
-    const { className, viewBox, rotate } = this;
+    const { className, rotate, component: IconNode } = this;
 
     const svgStyle = rotate
-      ? {
-        msTransform: `rotate(${rotate}deg)`,
-        transform: `rotate(${rotate}deg)`
-      }
-      : undefined;
+    ? `ms-transform: rotate(${rotate}deg); transform: rotate(${rotate}deg)`
+    : undefined;
 
-    const innerSvgProps = {
-      style: svgStyle,
-      viewBox
-    };
-
-    if (!viewBox) {
-      delete innerSvgProps.viewBox;
-    }
+  const innerSvgProps = {
+    'aria-hidden': 'true',
+    'focusable': 'false',
+    style: svgStyle,
+  };
 
     return (
       <span
         role="img"
+        class={["spotecicon", className]}
+        onclick={this.handleClick}
       >
-        {this.$slots.default}
+        <IconNode {...{ attrs: innerSvgProps }} />
       </span>
     );
   }

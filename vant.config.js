@@ -10,7 +10,7 @@ module.exports = {
   },
   site: {
     title: 'ahoney',
-    logo: 'https://img.yzcdn.cn/vant/logo.png',
+    logo: 'https://cn.vuejs.org/images/logo.png',
     nav: [
       {
         title: '开发指南',
@@ -29,13 +29,9 @@ module.exports = {
         title: '基础组件',
         items: [
           {
-            path: 'demo-button',
-            title: 'DemoButton 按钮',
-          },
-          {
             path: 'icon',
-            title: 'icon 按钮',
-          },
+            title: 'icon',
+          }
         ],
       },
     ],

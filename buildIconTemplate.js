@@ -1,7 +1,7 @@
 function defaultTemplate(
   { template },
   opts,
-  { imports, interfaces, componentName, props, jsx, exports },
+  { componentName, jsx, exports },
 ) {
   const plugins = ['jsx']
 
@@ -9,20 +9,32 @@ function defaultTemplate(
   componentName.name = componentName.name.replace('Svg', '')
   const typeScriptTpl = template.smart({ plugins })
   return typeScriptTpl.ast`
-  import Icon from '../icon';
+    import Icon from '../icon';
+
+    const getIConNode = () => ({
+      functional: true,
+      render(_, context){
+        const props = {
+          attrs: context.props
+        };
+        return ${jsx};
+      }
+    });
 
     const ${componentName} = {
-      render(){
-        const getIconNode = (attrs) => {
-          const props = { attrs };
-
-          return ${jsx}
-        };
-        return (<Icon>{getIconNode({
-          focusable: "false",
-          'aria-hidden': "true"
-        })}</Icon>);
-      }
+      functional: true,
+      render(_, context) {
+        const filalyProps = {
+          props: context.props,
+          on: context.listeners
+        }
+        return (
+          <Icon
+            {...filalyProps}
+            component={getIConNode()}
+          />
+        );
+      },
     }
     ${exports}
   `

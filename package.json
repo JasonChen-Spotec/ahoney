@@ -20,12 +20,6 @@
   },
   "author": "",
   "license": "MIT",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "vant-cli commit-lint"
-    }
-  },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,vue}": [
       "eslint --fix",
@@ -65,5 +59,8 @@
   "browserslist": [
     "Android >= 4.0",
     "iOS >= 8"
-  ]
+  ],
+  "dependencies": {
+    "insert-css": "^2.0.0"
+  }
 }
