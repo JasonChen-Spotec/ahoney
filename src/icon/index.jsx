@@ -9,11 +9,14 @@ const Icon = {
     className: String,
     rotate: Number,
     component: Object,
+    isInitCss: {
+      default: !(typeof XMLHttpRequest === 'undefined'),
+    },
     click: Function
   },
 
   mounted(){
-    if (!cssInjectedFlag) {
+    if (this.isInitCss && !cssInjectedFlag) {
       insertCss(styleStr, {
         prepend: true
       });
