@@ -11,16 +11,15 @@ const getIConNode = () => ({
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
         <circle fill="currentColor" cx={8} cy={8} r={8} />
         <path
-          fill="inherit"
-          className="check-circle-filled_svg__st0"
-          d="M12.5 4.4c-.2-.2-.5-.2-.7 0l-5 5c-.2.2-.5.2-.7 0l-2-2c-.1-.2-.4-.2-.6 0l-.7.8c-.2.2-.2.5 0 .7l3.3 3.3c.2.2.6.2.8 0l6.3-6.3c.2-.2.2-.5 0-.7l-.7-.8z"
+          className="close-circle-t-filled_svg__cls-1"
+          d="M12.05 5.18l-1.21-1.21L8.01 6.8 5.18 3.97 3.97 5.18 6.8 8.01l-2.83 2.83 1.21 1.21 2.83-2.83 2.83 2.83 1.21-1.21-2.83-2.83 2.83-2.83z"
         />
       </svg>
     );
   },
 });
 
-const CheckCircleFilled = {
+const CloseCircleTFilled = {
   functional: true,
 
   render(_, context) {
@@ -31,4 +30,4 @@ const CheckCircleFilled = {
     return <Icon {...filalyProps} component={getIConNode()} />;
   },
 };
-export default CheckCircleFilled;
+export default CloseCircleTFilled;
