@@ -29,6 +29,7 @@ import Icon from 'ahoney/lib/icon';
 | tabindex | - | _number_ | - |
 | class-name | '' | _string_ | - |
 | component | svg compoent | _object_ | `false` |
+
 ### Events
 
 | 事件名     | 说明                                     | 回调参数            |
