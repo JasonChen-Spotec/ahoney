@@ -1,6 +1,6 @@
 {
   "name": "ahoney",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "",
   "repository": "git@github.com:JasonChen-Spotec/ahoney.git",
   "main": "lib/ahoney.js",
