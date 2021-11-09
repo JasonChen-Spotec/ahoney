@@ -6,6 +6,7 @@ export { default as ArrowOutsideCircleOutlined } from './ArrowOutsideCircleOutli
 export { default as BOutlined } from './BOutlined'
 export { default as BarLineOutlined } from './BarLineOutlined'
 export { default as BarOutlined } from './BarOutlined'
+export { default as BigEllipsisOutlined } from './BigEllipsisOutlined'
 export { default as BlockTowerOutlined } from './BlockTowerOutlined'
 export { default as BookmarkFilled } from './BookmarkFilled'
 export { default as BoxOutlined } from './BoxOutlined'
