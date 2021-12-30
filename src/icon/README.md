@@ -10,7 +10,7 @@ import Icon from 'ahoney/lib/icon';
 ### 用法
 
 ```html
-  <icon
+  <Icon
     :rotate="23"
     :tabindex="0"
     class-name="test"
